@@ -5,9 +5,10 @@ from tkinter import *
 import tkinter.ttk
 import datetime
 from threading import Timer
-from notify_run import Notify 
-import pyqrcode
-import os
+from notify_run import Notify
+import webbrowser 
+# import pyqrcode
+# import os
 
 class App(tk.Frame):                        # Copied from stackoverflow:-https://stackoverflow.com/questions/57034118/time-picker-for-tkinter
     def __init__(self, parent):
@@ -144,11 +145,18 @@ def write():
     # else:
     #     print('Please provide title and msg')
 
-def create_qr():
-    s=entvar.get()
-    url=pyqrcode.create(s)
-    url.png("myqr.png",scale=8)
-    os.system("myqr.png")
+# def create_qr():
+#     s=entvar.get()
+#     url=pyqrcode.create(s)
+#     url.png("myqr.png",scale=8)
+#     os.system("myqr.png")
+
+def web_pg():
+    url = 'https://notify.run'
+    webbrowser.register('chrome',
+        None,
+        webbrowser.BackgroundBrowser("C://Program Files (x86)//Google//Chrome//Application//chrome.exe"))
+    webbrowser.get('chrome').open_new(url)
 
 
 def delete_tag(event, b):
@@ -254,9 +262,11 @@ app.place(x=600,y=155)
 Button(root,text="create",command=lambda: [create(), write(), load()]).place(x=400,y=205)
 
 Label(root,text="Click here to generate qr for login.").place(x=400,y=305)
-entvar=StringVar()
-Entry(root,textvariable=entvar).place(x=600,y=305)
-Button(root,text="Genrate QR",command=create_qr).place(x=600,y=355)
+# entvar=StringVar()
+# Entry(root,textvariable=entvar).place(x=600,y=305)
+Button(root,text="Genrate QR",command=web_pg).place(x=600,y=305)
+Label(root,wraplength=300,text="(Simply click on create channel and scan QR code on your device on which you want to recive notification)").place(x=400,y=355)
+
 # to-do list
 tk.ttk.Separator(root, orient=VERTICAL).place(x=400,y=0)
 Label(root,text="Your works to be Done-->").place(x=100,y=5)
