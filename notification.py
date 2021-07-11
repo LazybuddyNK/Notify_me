@@ -91,9 +91,9 @@ def load():
 
             for i,j in enumerate(data):
                 # Seperator
-                if(i>=4):
-                    # tk.ttk.Separator(root, orient=VERTICAL).grid(column=2,row=i+4,rowspan=1,sticky='ns')
-                    tk.ttk.Separator(root, orient=VERTICAL).pack()
+                # if(i>=4):
+                #     # tk.ttk.Separator(root, orient=VERTICAL).grid(column=2,row=i+4,rowspan=1,sticky='ns')
+                #     tk.ttk.Separator(root, orient=VERTICAL).pack()
 
                 t = ''
                 for a,k in enumerate(j.split('|')):
@@ -189,7 +189,7 @@ def delete_tag(event, b):
 # create()
 root =Tk()
 root.title("Notify_me")
-root.geometry("750x400")
+root.geometry("750x450")
 # root['bg'] = 'cyan'
 
 
@@ -265,10 +265,12 @@ Label(root,text="Click here to generate qr for login.").place(x=400,y=305)
 # entvar=StringVar()
 # Entry(root,textvariable=entvar).place(x=600,y=305)
 Button(root,text="Genrate QR",command=web_pg).place(x=600,y=305)
-Label(root,wraplength=300,text="(Simply click on create channel and scan QR code on your device on which you want to recive notification)").place(x=400,y=355)
+Label(root,wraplength=300,fg='red',text="-Simply click on create channel and scan QR code on your device on which you want to recive notification").place(x=400,y=355)
+
+Label(root,wraplength=300,fg='red',text="-To delete a task triple click on it.").place(x=400,y=405)
 
 # to-do list
-tk.ttk.Separator(root, orient=VERTICAL).place(x=400,y=0)
+# tk.ttk.Separator(root, orient=VERTICAL).place(x=400,y=0)
 Label(root,text="Your works to be Done-->").place(x=100,y=5)
 load()
 

@@ -1,0 +1,8 @@
+certifi==2021.5.30
+chardet==3.0.4
+idna==2.8
+notify-run==0.0.14
+plyer==2.0.0
+PyQRCode==1.2.1
+requests==2.22.0
+urllib3==1.25.11
