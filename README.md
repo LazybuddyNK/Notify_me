@@ -6,4 +6,4 @@ To install all the libraries move to the directory where u cloned it (using term
 Finally to open the program:
 - run : python notification.py
 
-![alt text](https://github.com/LazybuddyNK/Notify_me/blob/master/noti.PNG)
+![alt text](https://github.com/LazybuddyNK/Notify_me/blob/master/noti.png)
